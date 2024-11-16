@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MyCON" pageWidth="255" pageHeight="700" whenNoDataType="BlankPage" columnWidth="215" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fe2bc7d2-252f-4afc-bd3f-af34b3af3a13">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="discount" class="java.lang.Double"/>
+	<parameter name="pymentriel" class="java.lang.Double"/>
+	<parameter name="paymentr" class="java.lang.Double"/>
+	<parameter name="paymentd" class="java.lang.Double"/>
+	<parameter name="cashreceived" class="java.lang.Double"/>
+	<parameter name="cashreturn" class="java.lang.Double"/>
+	<parameter name="received" class="java.lang.Double"/>
+	<parameter name="return" class="java.lang.Double"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT*FROM menu_cinema]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="menu_cinema"/>
+	</field>
+	<field name="price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="menu_cinema"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="menu_cinema"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="menu_cinema"/>
+	</field>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<image>
+				<reportElement x="61" y="0" width="93" height="49" uuid="c289f380-9524-4a26-b6fa-8dc05edd27b6"/>
+				<imageExpression><![CDATA["D:/img_cinema/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="-22" y="110" width="262" height="16" uuid="1c70649b-3e97-4334-aa19-f9a39a0fcf53"/>
+				<text><![CDATA[-------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="50" y="90" width="90" height="20" uuid="b0d95d51-78e8-46d3-b454-73a4bae30a1c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="168" y="90" width="50" height="20" uuid="aaa142d4-eedb-46e9-a461-710d212e1180"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="90" width="32" height="20" uuid="5dd2dd6e-c4ed-4a5c-9d17-274ada9ffa7a"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="90" width="38" height="20" uuid="d01694fb-003c-44fe-a0ca-2dfe265f87c9"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="168" height="20" uuid="5ec5233e-6015-4921-b1ec-5b81b3ed1ae2"/>
+				<text><![CDATA[Address:    Sen Sok, Phnom Penh]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="-22" y="30" width="262" height="16" uuid="9f841d3c-39cb-4d74-a83e-4f2e830d553a"/>
+				<text><![CDATA[-------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="-1" width="60" height="16" uuid="3a6af329-5203-4307-8059-822b4486d814"/>
+				<text><![CDATA[#No.Invoice:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="-1" width="48" height="16" uuid="8df1dd07-4459-4792-aab9-483211fa9934"/>
+				<textFieldExpression><![CDATA["000"+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="50" height="14" uuid="deff6bb2-2bfd-4a54-b894-5c939bc77048"/>
+				<text><![CDATA[Customer:   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="16" width="30" height="14" uuid="957b0587-f6c9-4af0-8ec1-3c86b08b6cf1"/>
+				<text><![CDATA[Shop]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="56" height="30" uuid="67bb3dc6-9a19-4302-ad10-b3891add20ba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00e8a42a-f655-44ce-a794-16d9f734cdbb"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="53" height="30" uuid="11ce26cc-06e5-4d47-a6be-61568a6d6931">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b746599-c5ac-4ffb-84db-45ea5b1669c8"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="1" width="53" height="30" uuid="7ed22f0a-f64b-4f0d-9bed-859a355720aa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a83094dd-2001-4efa-a192-1b7054b9ad91"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="52" height="30" uuid="d4afb998-e428-48f9-b7fa-169b91bc2fc4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0c29626b-217a-4e7f-8992-076469c1d23a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="56" height="20" uuid="270173c3-5f6d-463d-8de9-79582f709072">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00e8a42a-f655-44ce-a794-16d9f734cdbb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="53" height="20" uuid="3f747abf-551b-4720-808b-57e01033a9a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b746599-c5ac-4ffb-84db-45ea5b1669c8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["$" +$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="1" width="53" height="20" uuid="f0fac4a2-98d2-4853-8789-1eabce9f4970">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a83094dd-2001-4efa-a192-1b7054b9ad91"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="53" height="20" uuid="b71a0eb6-30a5-4d70-be41-7a4f91286b27">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0c29626b-217a-4e7f-8992-076469c1d23a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["$" +$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="103">
+			<staticText>
+				<reportElement x="23" y="40" width="168" height="16" uuid="7f2a144e-ae1b-471b-aa38-55509722e2b6"/>
+				<text><![CDATA[Thank you for coming. see you again!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="56" width="118" height="14" uuid="d819f3e8-67e7-4777-8fed-e5e925ed2593"/>
+				<text><![CDATA[*****************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="70" width="154" height="16" uuid="3ae9f5ab-5bc3-47f0-9e99-588232c37f10"/>
+				<text><![CDATA[FB: @Legend Cinema Cambodia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="86" width="154" height="16" uuid="83d1a1d7-a282-4491-bc0c-f47a0df05bb0"/>
+				<text><![CDATA[YT: @Legend Cinema Cambodia]]></text>
+			</staticText>
+			<image>
+				<reportElement x="60" y="8" width="91" height="52" uuid="5e495b68-4e73-4dff-b330-15385404c302"/>
+				<imageExpression><![CDATA["C:/Users/ASUS/Pictures/Screenshots/Screenshot 2024-08-31 163456.png"]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+	<summary>
+		<band height="162" splitType="Stretch">
+			<staticText>
+				<reportElement x="-22" y="100" width="262" height="14" uuid="fb88302d-fcc6-47f5-b32d-4193037310d0"/>
+				<text><![CDATA[------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="50" height="16" uuid="aad06019-cf46-45fd-bec7-c7b0c3e20d81"/>
+				<text><![CDATA[Discount:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="60" width="61" height="16" uuid="dd017d66-14b1-4bf4-9bc9-d262846ac40c"/>
+				<text><![CDATA[Payment ($):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="82" width="61" height="16" uuid="9aabda59-abda-4e9e-9f5f-9faa2e0b1451"/>
+				<text><![CDATA[Payment (R):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="40" height="16" uuid="ac979a09-b184-41e7-a3f8-c19f31a6a762"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="16" width="64" height="19" uuid="8f460ecf-9058-4548-ad2c-93a1169f59c0"/>
+				<textFieldExpression><![CDATA["$" +$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="37" width="90" height="20" uuid="aea3e2bd-c564-4e26-8f6a-ac0c67be6110"/>
+				<textFieldExpression><![CDATA[$P{discount}+ "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="60" width="90" height="22" uuid="cf1363c9-2a51-473b-8b6f-be8d985e5ae4"/>
+				<textFieldExpression><![CDATA["$" +$P{paymentd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="82" width="90" height="14" uuid="4f32a31a-cde3-4b86-bc3c-cb4a901418dc"/>
+				<textFieldExpression><![CDATA["៛" +$P{paymentr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-22" y="0" width="262" height="16" uuid="436057d5-a1ee-40a3-8fdc-d8bd3e7a9464"/>
+				<text><![CDATA[-----------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="77" height="16" uuid="f3c23301-ccc3-4399-a52a-d4748361dc52"/>
+				<text><![CDATA[Cash received :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="144" width="61" height="16" uuid="3c4ba5ee-b3a4-405d-84be-0647d3deaf58"/>
+				<text><![CDATA[Cash return :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="120" width="60" height="16" uuid="16f675f5-6258-48ce-aca4-9c5e8be9e5c5"/>
+				<textFieldExpression><![CDATA["៛" +$P{cashreceived}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="144" width="60" height="17" uuid="1cd2555e-b345-46e6-a7d5-d2b47dfcb5a4"/>
+				<textFieldExpression><![CDATA["៛" +$P{cashreturn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="119" width="55" height="18" uuid="c763a794-1ed1-4551-a308-bbbc158e0890"/>
+				<textFieldExpression><![CDATA["$" +$P{received}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="144" width="55" height="17" uuid="c9c15768-734d-432c-94ff-040499273b3d"/>
+				<textFieldExpression><![CDATA["$" +$P{return}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
